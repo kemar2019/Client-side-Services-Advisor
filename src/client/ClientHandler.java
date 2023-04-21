@@ -215,7 +215,13 @@ public class ClientHandler {
 			  
 			  } if (action.equalsIgnoreCase("Login Advisor")) {
 			  
-			  
+				  Response response = (Response) objIs.readObject();
+		            if (response.getSuccess() && response.getMessage().equals("Authorized")) {
+		            	return true;
+					
+		            } else {
+		                JOptionPane.showMessageDialog(null, "Login failed!");
+		            }
 			  }
 			 
 			 if (action.equalsIgnoreCase("Add Complaint_Query")) {
